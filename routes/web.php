@@ -29,3 +29,7 @@ Route::get('/about', 'AboutController@index');
 Route::get('/contact', 'ContactController@index');
 
 Route::get('/profile', 'ProfileController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -51,7 +51,7 @@
           </div>
           <div class="ed-com-t1-right">
             <ul>
-              <li><a href="login.html">Sign In</a>
+              <li><a href="/login">Sign In</a>
               </li>
               <li><a href="register.html">Sign Up</a>
               </li>
