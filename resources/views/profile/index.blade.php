@@ -155,7 +155,5 @@
 </section>
 <!--END DASHBOARD-->
 
-<!--END DASHBOARD-->
-
 
 @endsection
