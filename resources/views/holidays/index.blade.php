@@ -1,6 +1,6 @@
 @extends ('layout')
 
-<div class="container">
+
 
 
 @section ('content')
@@ -290,5 +290,5 @@
   </div>
 </section>
 
+
 @endsection
-</div>

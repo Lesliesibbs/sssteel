@@ -12,13 +12,29 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
+    <script>
+      @if(Session::has('success'))
+      toastr.success("{{ Session::get('success') }}");
+      @endif
+      if($request->session()->has('success'))
+{
+  toastr.success("{{ Session::get('success') }}")
+
+}
+    </script>
+
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
-    <!-- Styles -->
+
+
+      <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -67,9 +83,45 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <!--<main class="py-4">
             @yield('content')
-        </main>
+        </main>-->
+        <div class="container">
+          <main class="py-4">
+          <div class="row">
+
+            @if(Auth::check())
+
+
+            <div class="col-lg-4">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <a href="{{ route('home')}}">Home</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="{{route('holidays.create')}}">Holidays create</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="{{route('packages.create')}}">Package create</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="{{route('packages')}}">Package</a>
+                </li>
+              </ul>
+            </div>
+
+            @endif
+
+              <div class="col-lg-8">
+                @yield('content')
+              </div>
+
+          </div>
+</main>
+        </div>
+
     </div>
+
+
 </body>
 </html>

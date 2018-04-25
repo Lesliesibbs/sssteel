@@ -51,9 +51,9 @@
           </div>
           <div class="ed-com-t1-right">
             <ul>
-              <li><a href="/login">Sign In</a>
+              <li><a href="{{ url('/login') }}">Sign In</a>
               </li>
-              <li><a href="register.html">Sign Up</a>
+              <li><a href="{{ url('/register') }}">Sign Up</a>
               </li>
             </ul>
           </div>
