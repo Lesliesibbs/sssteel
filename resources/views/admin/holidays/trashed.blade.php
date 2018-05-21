@@ -43,7 +43,10 @@
       Edit
     </th>
     <th>
-      Trash
+      Restore
+    </th>
+    <th>
+      Destroy
     </th>
 
 
@@ -82,10 +85,14 @@
     <img src="{{asset($holidays->gallery)}}" width="50" height="50">
   </td>
   <td>
-    <a href="{{ route('holidays.edit', ['id' => $holidays->id])}}" class="btn btn-info">Edit</a>
+    Edit
   </td>
   <td>
-    <a href="{{ route('holidays.delete', ['id' => $holidays->id])}}" class="btn btn-danger">Trash</a>
+    <a href="{{ route('holidays.restore', ['id' => $holidays->id])}}" class="btn btn-success">Restore</a>
+  </td>
+
+  <td>
+    <a href="{{ route('holidays.kill', ['id' => $holidays->id])}}" class="btn btn-danger">Delete</a>
   </td>
 </tr>
 @endforeach

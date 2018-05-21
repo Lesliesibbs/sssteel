@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Holidays;
 use Illuminate\Http\Request;
 use App\Packages;
+use Session;
 
 class HolidaysController extends Controller
 {
@@ -14,7 +15,7 @@ class HolidaysController extends Controller
      */
     public function index()
     {
-        return view('admin.holidays.index');
+        return view('admin.holidays.index')->with('holidays', Holidays::all());
     }
 
     /**
@@ -24,7 +25,18 @@ class HolidaysController extends Controller
      */
     public function create()
     {
-      return view('admin.holidays.create')->with('packagies', Packages::all());
+
+      $packages = Packages::all();
+
+      if($packages->count() == 0)
+
+      {
+        Session::flash('info', 'you must have some pakcges before creating posts');
+
+          return redirect()->back();
+      }
+
+      return view('admin.holidays.create')->with('packagies', $packages);
 
       //  return view('admin.holidays.create')->with('packages', Packages::all());
     }
@@ -44,8 +56,6 @@ class HolidaysController extends Controller
           'city' => 'required|max:255',
           'country' => 'required|max:255',
           'duration' => 'required|max:255',
-          'arrival' => 'required',
-          'departure' => 'required',
           'gallery' => 'required|image',
           'packages_id' => 'required'
 
@@ -64,15 +74,18 @@ class HolidaysController extends Controller
           'city' => $request->city,
           'country' => $request->country,
           'duration' => $request->duration,
-          'arrival' => $request->arrival,
-          'departure' => $request->departure,
+          'arrival_date' => $request->arrival,
+          'departure_date' => $request->departure,
           'gallery' => 'uploads/holidays' . $gallery_new_name,
           'packages_id' => $request->packages_id,
+          'slug' => str_slug($request->title)
 
-          
+
         ]);
 
-        dd($request->all());
+        Session::flash('success', 'Holiday Created Successfully');
+
+        return redirect()->back();
     }
 
     /**
@@ -94,7 +107,8 @@ class HolidaysController extends Controller
      */
     public function edit($id)
     {
-        //
+        $holidays = Holidays::find($id);
+        return view('admin.holidays.edit')->with('holidays', $holidays)->with('packagies', Packages::all());
     }
 
     /**
@@ -117,6 +131,39 @@ class HolidaysController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $holidays = Holidays::find($id);
+
+        $holidays->delete();
+
+        Session::flash('success', 'Post trashed');
+
+          return redirect()->back();
     }
+
+    public function trashed()
+    {
+      $holidays = Holidays::onlyTrashed()->get();
+
+      return view('admin.holidays.trashed')->with('holidays', $holidays);
+
+    }
+    public function kill($id)
+    {
+      $holiday = Holidays::withTrashed()->where('id', $id)->first();
+      $holiday->forceDelete();
+
+      Session::flash('success', 'done');
+      return redirect()->back();
+    }
+    public function restore($id){
+      $holiday = Holidays::withTrashed()->where('id', $id)->first();
+      $holiday->restore();
+
+      Session::flash('success', 'done');
+
+      return redirect()->route('holidays');
+
+
+    }
+
 }

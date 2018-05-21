@@ -18,12 +18,6 @@ Route::get('/', function () {
     return view('index');
   });
 
-Route::get('/holidays', 'HolidaysController@index');
-
-
-
-
-
 Route::get('/about', 'AboutController@index');
 
 Route::get('/contact', 'ContactController@index');
@@ -37,6 +31,21 @@ Auth::routes();
 
 
 Route::group(['prefix'=> 'admin', 'middleware'=>'auth'], function(){
+
+  Route::get('/tasks', [
+    'uses' => 'TasksController@index',
+    'as' => 'tasks'
+  ]);
+
+  Route::get('/tasks/create', [
+    'uses' => 'TasksController@create',
+    'as' => 'tasks.create'
+  ]);
+
+  Route::post('/tasks/store', [
+    'uses' => 'TasksController@store',
+    'as' => 'tasks.store'
+  ]);
 
   Route::get('/profile', [
     'uses' => 'ProfileController@index',
@@ -56,6 +65,36 @@ Route::group(['prefix'=> 'admin', 'middleware'=>'auth'], function(){
   Route::post('/holidays/store', [
     'uses' => 'HolidaysController@store',
     'as' => 'holidays.store'
+  ]);
+
+  Route::get('/holidays/delete/{id}', [
+    'uses' => 'HolidaysController@destroy',
+    'as' => 'holidays.delete'
+  ]);
+
+  Route::get('/holidays', [
+    'uses' => 'HolidaysController@index',
+    'as' => 'holidays'
+  ]);
+  Route::get('/holidays/trashed', [
+    'uses' => 'HolidaysController@trashed',
+    'as' => 'holidays.trashed'
+  ]);
+  Route::get('/holidays/kill/{id}', [
+    'uses' => 'HolidaysController@kill',
+    'as' => 'holidays.kill'
+  ]);
+  Route::get('/holidays/restore/{id}', [
+    'uses' => 'HolidaysController@restore',
+    'as' => 'holidays.restore'
+  ]);
+  Route::get('/holidays/edit/{id}', [
+    'uses' => 'HolidaysController@edit',
+    'as' => 'holidays.edit'
+  ]);
+  Route::post('/holidays/update/{id}', [
+    'uses' => 'HolidaysController@update',
+    'as' => 'holidays.update'
   ]);
 
   Route::get('/packages/create', [

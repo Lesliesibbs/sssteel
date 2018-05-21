@@ -17,6 +17,9 @@
       @if(Session::has('success'))
       toastr.success("{{ Session::get('success') }}");
       @endif
+      @if(Session::has('info'))
+      toastr.success("{{ Session::get('success') }}");
+      @endif
       if($request->session()->has('success'))
 {
   toastr.success("{{ Session::get('success') }}")
@@ -106,6 +109,36 @@
                 </li>
                 <li class="list-group-item">
                   <a href="{{route('packages')}}">Package</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="{{route('holidays')}}">All Holidays</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="{{route('holidays')}}">Edit Holidays</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="{{route('holidays')}}">Email</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KKKP7LSVY6ZSW">Payments</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="{{route('holidays')}}">Votes</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="{{route('tasks')}}">Calender</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="{{route('tasks.create')}}">Calender Create</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="{{route('holidays')}}">Users</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="{{route('holidays.trashed')}}">Trash</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="{{route('holidays')}}">Settings</a>
                 </li>
               </ul>
             </div>
