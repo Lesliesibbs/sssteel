@@ -132,7 +132,10 @@ return [
         Illuminate\Cookie\CookieServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Encryption\EncryptionServiceProvider::class,
+<<<<<<< HEAD
         MaddHatter\LaravelFullcalendar\ServiceProvider::class, //calendar
+=======
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
         Illuminate\Filesystem\FilesystemServiceProvider::class,
         Illuminate\Foundation\Providers\FoundationServiceProvider::class,
         Illuminate\Hashing\HashServiceProvider::class,
@@ -155,11 +158,19 @@ return [
         /*
          * Application Service Providers...
          */
+<<<<<<< HEAD
         SSSTEELE\Providers\AppServiceProvider::class,
         SSSTEELE\Providers\AuthServiceProvider::class,
         // SSSTEELE\Providers\BroadcastServiceProvider::class,
         SSSTEELE\Providers\EventServiceProvider::class,
         SSSTEELE\Providers\RouteServiceProvider::class,
+=======
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
 
     ],
 
@@ -209,7 +220,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+<<<<<<< HEAD
         'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class, //calendar
+=======
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
 
     ],
 

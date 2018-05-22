@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace SSSTEELE\Exceptions;
+=======
+namespace App\Exceptions;
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

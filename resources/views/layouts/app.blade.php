@@ -12,6 +12,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+<<<<<<< HEAD
     <script src="{{ asset('js/toastr.min.js') }}"></script>
     <script>
       @if(Session::has('success'))
@@ -28,16 +29,23 @@
     </script>
 
 
+=======
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
+<<<<<<< HEAD
 
 
       <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
+=======
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
 </head>
 <body>
     <div id="app">
@@ -86,6 +94,7 @@
             </div>
         </nav>
 
+<<<<<<< HEAD
         <!--<main class="py-4">
             @yield('content')
         </main>-->
@@ -147,5 +156,11 @@
     </div>
 
 
+=======
+        <main class="py-4">
+            @yield('content')
+        </main>
+    </div>
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
 </body>
 </html>

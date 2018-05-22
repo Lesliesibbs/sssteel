@@ -1,9 +1,15 @@
 <?php
 
+<<<<<<< HEAD
 namespace SSSTEELE\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+=======
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,7 +20,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+<<<<<<< HEAD
       Schema::defaultStringLength(191);
+=======
+        //
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
     }
 
     /**

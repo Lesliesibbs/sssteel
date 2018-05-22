@@ -40,6 +40,7 @@ return [
         ],
 
         'mysql' => [
+<<<<<<< HEAD
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
@@ -54,6 +55,18 @@ return [
             'engine' => null,
             'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
 
+=======
+          'driver'    => 'mysql',
+     'host'      => 'localhost:8889',
+     'database'  => 'sssteel',
+     'username'  => 'root',
+     'password'  => 'root',
+     'charset'   => 'utf8',
+     'collation' => 'utf8_unicode_ci',
+     'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
+     'prefix'    => '',
+     'strict'    => false,
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
         ],
 
         'pgsql' => [

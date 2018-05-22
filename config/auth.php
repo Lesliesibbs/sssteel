@@ -67,7 +67,11 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
+<<<<<<< HEAD
             'model' => SSSTEELE\User::class,
+=======
+            'model' => App\User::class,
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
         ],
 
         // 'users' => [

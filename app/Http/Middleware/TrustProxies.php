@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace SSSTEELE\Http\Middleware;
+=======
+namespace App\Http\Middleware;
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
 
 use Illuminate\Http\Request;
 use Fideloper\Proxy\TrustProxies as Middleware;

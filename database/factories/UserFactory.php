@@ -13,7 +13,11 @@ use Faker\Generator as Faker;
 |
 */
 
+<<<<<<< HEAD
 $factory->define(SSSTEELE\User::class, function (Faker $faker) {
+=======
+$factory->define(App\User::class, function (Faker $faker) {
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,

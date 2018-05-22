@@ -29,7 +29,11 @@ return [
     */
 
     'bcrypt' => [
+<<<<<<< HEAD
         'rounds' => 10,
+=======
+        'rounds' => env('BCRYPT_ROUNDS', 10),
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
     ],
 
     /*

@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace SSSTEELE;
+=======
+namespace App;
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;

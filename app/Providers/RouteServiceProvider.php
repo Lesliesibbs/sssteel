@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace SSSTEELE\Providers;
+=======
+namespace App\Providers;
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +18,11 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
+<<<<<<< HEAD
     protected $namespace = 'SSSTEELE\Http\Controllers';
+=======
+    protected $namespace = 'App\Http\Controllers';
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
 
     /**
      * Define your route model bindings, pattern filters, etc.

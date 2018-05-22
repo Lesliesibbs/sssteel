@@ -30,7 +30,11 @@ return [
     ],
 
     'stripe' => [
+<<<<<<< HEAD
         'model' => SSSTEELE\User::class,
+=======
+        'model' => App\User::class,
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

@@ -11,6 +11,7 @@
 |
 */
 
+<<<<<<< HEAD
 //Route::get('/', function () {
   //  return view('welcome');
 //});
@@ -133,3 +134,12 @@ Route::group(['prefix'=> 'admin', 'middleware'=>'auth'], function(){
     'as' => 'forms'
   ]);
 });
+=======
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1

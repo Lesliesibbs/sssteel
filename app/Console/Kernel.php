@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace SSSTEELE\Console;
+=======
+namespace App\Console;
+>>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
