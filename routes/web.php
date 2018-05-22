@@ -127,4 +127,9 @@ Route::group(['prefix'=> 'admin', 'middleware'=>'auth'], function(){
     'uses' => 'PackagesController@update',
     'as' => 'packages.update'
   ]);
+
+  Route::get('/forms', [
+    'uses' => 'FormsController@index',
+    'as' => 'forms'
+  ]);
 });

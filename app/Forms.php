@@ -4,7 +4,7 @@ namespace SSSTEELE;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Signup extends Model
+class Forms extends Model
 {
     //
 }

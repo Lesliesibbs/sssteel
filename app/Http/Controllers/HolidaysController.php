@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Holidays;
+namespace SSSTEELE\Http\Controllers;
+use SSSTEELE\Holidays;
 use Illuminate\Http\Request;
-use App\Packages;
+use SSSTEELE\Packages;
 use Session;
 
 class HolidaysController extends Controller

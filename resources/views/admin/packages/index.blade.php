@@ -2,7 +2,11 @@
 
 @section('content')
 <div class="panel-heading">
-  Categories
+  <div class="row">
+  <div class="col-md-4 text-left panel-title">Properties</div>
+  <div class="col-md-8 text-right panel-title">Add   <a href="{{route('packages.create')}}" class="btn btn-xs btn-info" role="button">+</a>
+</div>
+</div>
 </div>
   <table class="table table-hover">
 

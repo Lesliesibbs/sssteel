@@ -4,12 +4,11 @@ namespace SSSTEELE\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class FormsController extends Controller
 {
+
   public function index()
   {
-
-    return view('profile.index');
-
+      return view('admin.forms.index');
   }
 }

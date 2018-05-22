@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace SSSTEELE;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -34,7 +34,7 @@ class Holidays extends Model
     public function packages()
     {
 
-      return $this->belongsTo('App\Packages');
+      return $this->belongsTo('SSSTEELE\Packages');
 
     }
 }

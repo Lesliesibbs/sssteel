@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace SSSTEELE\Http\Controllers;
 
-use App\Packages;
+use SSSTEELE\Packages;
 
 
 use Illuminate\Http\Request;

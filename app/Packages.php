@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace SSSTEELE;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,6 +9,6 @@ class Packages extends Model
     public function holidays()
 
     {
-      return $this-hasMany('App\Holidays');
+      return $this-hasMany('SSSTEELE\Holidays');
     }
 }

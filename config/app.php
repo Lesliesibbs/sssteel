@@ -155,11 +155,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        SSSTEELE\Providers\AppServiceProvider::class,
+        SSSTEELE\Providers\AuthServiceProvider::class,
+        // SSSTEELE\Providers\BroadcastServiceProvider::class,
+        SSSTEELE\Providers\EventServiceProvider::class,
+        SSSTEELE\Providers\RouteServiceProvider::class,
 
     ],
 

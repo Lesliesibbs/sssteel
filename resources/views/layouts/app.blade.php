@@ -102,19 +102,16 @@
                   <a href="{{ route('home')}}">Home</a>
                 </li>
                 <li class="list-group-item">
-                  <a href="{{route('holidays.create')}}">Holidays create</a>
+                  <a href="{{route('packages')}}">Property</a>
                 </li>
                 <li class="list-group-item">
-                  <a href="{{route('packages.create')}}">Package create</a>
+                  <a href="{{route('forms')}}">Forms</a>
                 </li>
                 <li class="list-group-item">
-                  <a href="{{route('packages')}}">Package</a>
+                  <a href="{{route('holidays')}}">All Forms</a>
                 </li>
                 <li class="list-group-item">
-                  <a href="{{route('holidays')}}">All Holidays</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="{{route('holidays')}}">Edit Holidays</a>
+                  <a href="{{route('holidays')}}">Reports</a>
                 </li>
                 <li class="list-group-item">
                   <a href="{{route('holidays')}}">Email</a>
@@ -123,13 +120,7 @@
                   <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KKKP7LSVY6ZSW">Payments</a>
                 </li>
                 <li class="list-group-item">
-                  <a href="{{route('holidays')}}">Votes</a>
-                </li>
-                <li class="list-group-item">
                   <a href="{{route('tasks')}}">Calender</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="{{route('tasks.create')}}">Calender Create</a>
                 </li>
                 <li class="list-group-item">
                   <a href="{{route('holidays')}}">Users</a>

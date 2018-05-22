@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace SSSTEELE\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Task;
+use SSSTEELE\Task;
 use Calendar;
 
 class TasksController extends Controller
