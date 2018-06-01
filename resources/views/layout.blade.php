@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <title>Holiday4Change</title>
-  <!--== META TAGS ==-->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- FAV ICON -->
-  <link rel="shortcut icon" href="fav.ico">
-  <!-- GOOGLE FONTS -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins%7CQuicksand:400,500,700" rel="stylesheet">
-  <!-- FONT-AWESOME ICON CSS -->
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <!--== ALL CSS FILES ==-->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/materialize.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/mob.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-</head>
+   <!--[if lt IE 7 ]>
+   <html lang="en" class="innerpage no-js ie6">
+      <![endif]--><!--[if IE 7 ]>
+      <html lang="en" class="innerpage no-js ie7">
+         <![endif]--><!--[if IE 8 ]>
+         <html lang="en" class="innerpage no-js ie8">
+            <![endif]--><!--[if (gte IE 9)|!(IE)]><!-->
+            <head>
+               <!-- TITLE OF SITE -->
+               <title>SSSTEELE INVENTORY</title>
+               <!-- META -->
+               <meta charset="UTF-8">
+               <meta content="IE=edge" http-equiv="X-UA-Compatible">
+               <meta content="width=device-width, initial-scale=1" name="viewport">
+               <!-- FAVICON -->
+               <link rel="icon" href="images/favicon.ico">
+               <!-- BOOTSTRAP-->
+               <link href="css/bootstrap.min.css" rel="stylesheet">
+               <!-- OWL CAROUSEL STYLES -->
+               <link href="css/owl.carousel.min.css" rel="stylesheet">
+               <!-- CUSTOM CSS-->
+               <link href="css/styles.css" rel="stylesheet">
+               <link href="css/responsive.css" rel="stylesheet">
+               <!-- FONT AWESOME-->
+               <link href="css/font-awesome.min.css" rel="stylesheet">
+               <link href="css/menu.css" rel="stylesheet">
+               <!-- LIGHTBOX STYLES -->
+               <link href="css/lightbox.css" rel="stylesheet">
+            </head>
 <body>
 
 @include ('layout.nav')
@@ -41,7 +45,7 @@
 @include ('layout.scripts')
 
 
-</html>
 
 
-<body>
+</body>
+  </html>

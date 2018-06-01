@@ -5,10 +5,14 @@
 @include('admin.structure.errors')
 
   <div class="panel panel-default">
-
     <div class="panel-heading">
-      Edit Holiday: {{ $holidays->title }}
+      <div class="row">
+      <div class="col-md-4 text-left panel-title">Edit Properties : {{ $holidays->title }}</div>
+      <div class="col-md-8 text-right panel-title">Add   <a href="{{route('packages.create')}}" class="btn btn-xs btn-info" role="button">+</a>
     </div>
+    </div>
+    </div>
+
 
     <div class="panel-body">
       <form action="{{ route('holidays.update', ['id' => $holidays->id])}}" method="post" enctype="multipart/form-data">

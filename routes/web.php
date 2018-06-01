@@ -10,11 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*
+Route::get('/test', function () {
+    return SSSTEELE\Profile::find(1)->user;
+});
+*/
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 //Route::get('/', function () {
   //  return view('welcome');
 //});
+=======
+>>>>>>> mastwer
 Route::get('/', function () {
     return view('index');
   });
@@ -133,6 +141,35 @@ Route::group(['prefix'=> 'admin', 'middleware'=>'auth'], function(){
     'uses' => 'FormsController@index',
     'as' => 'forms'
   ]);
+  Route::get('/users', [
+    'uses' => 'UsersController@index',
+    'as' => 'users'
+  ]);
+  Route::get('/users/create', [
+    'uses' => 'UsersController@create',
+    'as' => 'users.create'
+  ]);
+  Route::post('/users/store', [
+    'uses' => 'UsersController@store',
+    'as' => 'users.store'
+  ]);
+  Route::get('/users/admin/{id}', [
+    'uses' => 'UsersController@admin',
+    'as' => 'users.admin'
+  ])->middleware('admin');
+
+  Route::get('/users/not-admin/{id}', [
+    'uses' => 'UsersController@not_admin',
+    'as' => 'users.not.admin'
+  ]);
+
+  Route::get('/events', [
+    'uses' => 'EventController@index',
+    'as' => 'events'
+  ]);
+
+
+  Route::get('pdfview',array('as'=>'pdfview','uses'=>'HolidaysController@pdfview'));
 });
 =======
 Route::get('/', function () {

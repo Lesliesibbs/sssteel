@@ -54,6 +54,8 @@
   </thead>
 
   <tbody>
+  @if($holidays->count() > 0)
+
 
 @foreach($holidays as $holidays)
 <tr>
@@ -96,6 +98,15 @@
   </td>
 </tr>
 @endforeach
+
+@else
+  <tr>
+<th colspan="5" class="text-center">
+No Trashed Posts
+</th>
+
+  </tr>
+@endif
 
 
   </tbody>

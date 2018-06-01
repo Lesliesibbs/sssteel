@@ -150,6 +150,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -164,6 +165,7 @@ return [
         // SSSTEELE\Providers\BroadcastServiceProvider::class,
         SSSTEELE\Providers\EventServiceProvider::class,
         SSSTEELE\Providers\RouteServiceProvider::class,
+<<<<<<< HEAD
 =======
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
@@ -172,6 +174,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 >>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
 
+=======
+        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+>>>>>>> mastwer
     ],
 
     /*
@@ -222,8 +227,12 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 <<<<<<< HEAD
         'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class, //calendar
+<<<<<<< HEAD
 =======
 >>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
+=======
+        'PDF' => Barryvdh\DomPDF\Facade::class,//DomPDF
+>>>>>>> mastwer
 
     ],
 

@@ -81,5 +81,6 @@ class Kernel extends HttpKernel
 >>>>>>> 478011d04d67bb0cfff8def9f1c943eacadae3b1
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'admin' => \SSSTEELE\Http\Middleware\Admin::class,
     ];
 }
