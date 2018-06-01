@@ -8,6 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
@@ -110,6 +111,11 @@
                 <li class="list-group-item">
                   <a href="{{route('holidays')}}">All Forms</a>
                 </li>
+
+                @if(Auth::user()->admin)
+
+
+
                 <li class="list-group-item">
                   <a href="{{route('holidays')}}">Reports</a>
                 </li>
@@ -120,10 +126,10 @@
                   <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KKKP7LSVY6ZSW">Payments</a>
                 </li>
                 <li class="list-group-item">
-                  <a href="{{route('tasks')}}">Calender</a>
+                  <a href="{{route('events')}}">Calender</a>
                 </li>
                 <li class="list-group-item">
-                  <a href="{{route('holidays')}}">Users</a>
+                  <a href="{{route('users')}}">Users</a>
                 </li>
                 <li class="list-group-item">
                   <a href="{{route('holidays.trashed')}}">Trash</a>
@@ -135,6 +141,8 @@
             </div>
 
             @endif
+
+              @endif
 
               <div class="col-lg-8">
                 @yield('content')

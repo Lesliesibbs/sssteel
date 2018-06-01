@@ -5,6 +5,9 @@ use SSSTEELE\Holidays;
 use Illuminate\Http\Request;
 use SSSTEELE\Packages;
 use Session;
+use DB;
+use PDF;
+
 
 class HolidaysController extends Controller
 {
@@ -164,6 +167,21 @@ class HolidaysController extends Controller
       return redirect()->route('holidays');
 
 
+    }
+
+    public function pdfview(Request $request)
+    {
+
+      $holidays = Holidays::all();
+      view()->share('holidays',$holidays);
+
+        if($request->has('download')){
+            $pdf = PDF::loadView('pdfview');
+            return $pdf->download('pdfview.pdf');
+        }
+
+
+        return view('pdfview');
     }
 
 }

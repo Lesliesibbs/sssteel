@@ -45,12 +45,16 @@
     <th>
       Trash
     </th>
+    <th>
+      Trash
+    </th>
 
 
 </tr>
   </thead>
 
   <tbody>
+@if ($holidays->count() > 0)
 
 @foreach($holidays as $holidays)
 <tr>
@@ -87,9 +91,21 @@
   <td>
     <a href="{{ route('holidays.delete', ['id' => $holidays->id])}}" class="btn btn-danger">Trash</a>
   </td>
+<td>
+  <a href="{{ route('pdfview',['download'=>'pdf']) }}">Download PDF</a>
+</td>
+
 </tr>
 @endforeach
+@else
 
+<tr>
+<th colspan="5" style="text-center">
+No Property
+</th>
+
+</tr>
+@endif
 
   </tbody>
 

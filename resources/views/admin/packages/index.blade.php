@@ -29,6 +29,7 @@
   </thead>
 
   <tbody>
+@if($packagies->count() > 0)
 
 @foreach($packagies as $packages)
 
@@ -62,6 +63,15 @@ x
   </tr>
 
   @endforeach
+  @else
+
+  <tr>
+  <th colspan="5" style="text-center">
+  No Property
+  </th>
+
+  </tr>
+  @endif
 
   </tbody>
 

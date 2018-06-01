@@ -12,3 +12,15 @@
     $('.embed-video').embedVideo();
   });
 </script>
+<!-- JQUERY -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<!-- TETHER -->
+<script src="js/tether.min.js"></script>
+<!-- BOOTSTRAP -->
+<script src="js/bootstrap.min.js"></script>
+<!-- OWL CAROUSEL -->
+<script src="js/owl.carousel.js"></script>
+<!-- LIGHTBOX -->
+<script src="js/lightbox.js"></script>
+<!-- INIT -->
+<script src="js/script.js"></script>

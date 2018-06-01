@@ -11,11 +11,16 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        App\User::create([
+      $user =  SSSTEELE\User::create([
           'name' => 'Admin',
           'email' => 'lesliesibanda123@gmail.com',
-          'password' => bcrypt('password')
-
+          'password' => bcrypt('password'),
+          'admin' => 1
         ]);
-    }
+
+        SSSTEELE\Profile::create([
+          'user_id' =>$user->id,
+          'avatar' => 'images/avatar.png',
+          'about' =>  'Chief Executive Officer of Shaniel Steele Inventory.'
+        ]);    }
 }
