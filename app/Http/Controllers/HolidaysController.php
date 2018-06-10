@@ -1,5 +1,4 @@
 <?php
-
 namespace SSSTEELE\Http\Controllers;
 use SSSTEELE\Holidays;
 use Illuminate\Http\Request;
@@ -60,7 +59,6 @@ class HolidaysController extends Controller
           'country' => 'required|max:255',
           'duration' => 'required|max:255',
           'gallery' => 'required|image',
-          'packages_id' => 'required'
 
         ]);
 

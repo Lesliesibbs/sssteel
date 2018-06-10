@@ -15,7 +15,22 @@
 <tr>
 
     <th>
-      Package Name
+      Property Type
+    </th>
+    <th>
+      House No/Name
+    </th>
+    <th>
+      Address 1
+    </th>
+    <th>
+      City
+    </th>
+    <th>
+      Postcode
+    </th>
+    <th>
+      Tenancy
     </th>
 
     <th>
@@ -34,10 +49,35 @@
 @foreach($packagies as $packages)
 
   <tr>
+  <td>
+
+    {{ $packages->property_type }}
+
+  </td>
+  <td>
+
+    {{ $packages->house_name }}
+
+  </td>
 
 <td>
 
-  {{ $packages->name }}
+  {{ $packages->address_1 }}
+
+</td>
+<td>
+
+  {{ $packages->city }}
+
+</td>
+<td>
+
+  {{ $packages->postcode }}
+
+</td>
+<td>
+
+  {{ $packages->tenancy_type }}
 
 </td>
 

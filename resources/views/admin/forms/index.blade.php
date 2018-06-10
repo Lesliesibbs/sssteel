@@ -9,9 +9,18 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
+        <h5 class="card-title">Property Form</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="{{route('packages.create')}}" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
         <h5 class="card-title">Check-In Form</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="{{route('holidays.create')}}" class="btn btn-primary">Go somewhere</a>
+        <a href="{{route('check_in.create')}}" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>
@@ -20,7 +29,7 @@
       <div class="card-body">
         <h5 class="card-title">Check-Out Form</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="{{route('holidays.create')}}" class="btn btn-primary">Go somewhere</a>
+        <a href="{{route('check_out.create')}}" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>
@@ -32,7 +41,7 @@
       <div class="card-body">
         <h5 class="card-title">Initial Inventory FormsController</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="{{route('holidays.create')}}" class="btn btn-primary">Go somewhere</a>
+        <a href="{{route('inventory.create')}}" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>
@@ -41,7 +50,7 @@
       <div class="card-body">
         <h5 class="card-title">Term Inventory</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="{{route('holidays.create')}}" class="btn btn-primary">Go somewhere</a>
+        <a href="{{route('term.create')}}" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>

@@ -1,20 +1,12 @@
 @extends('layout')
 
 
-@section('preloader')
-
-<!-- Preloader -->
-<div id="preloader">
-  <div id="status">&nbsp;</div>
-</div>
-@endsection
-
 
 @section('content')
 <!-- page wrapper start  -->
 <div class="wrapper">
    <!-- page header start  -->
-  
+
    <!-- about area start -->
    <div class="about" id="about us">
       <div class="container">

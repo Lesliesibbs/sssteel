@@ -7,69 +7,85 @@
   <div class="panel panel-default">
 
     <div class="panel-heading">
-      Create Holiday
+      Check In Form
     </div>
 
     <div class="panel-body">
       <form action="{{ route('holidays.store')}}" method="post" enctype="multipart/form-data">
 
-        <div class="form-group">
+        <div class="dropdown">
+        <label for="address">Address</label>
+        <button class="btn btn-primary dropdown-toggle form-control" type="button" data-toggle="dropdown">Address
+<span class="caret"></span></button>
+<ul class="dropdown-menu">
+  <li><a href="#">HTML</a></li>
+  <li><a href="#">CSS</a></li>
+  <li><a href="#">JavaScript</a></li>
+        </ul>
+        </div>
 
-          <label for="title">Title</label>
-          <input type="text" name="title" class="form-control">
-
+        <div class="dropdown">
+        <label for="property_type">Property Type</label>
+        <button class="btn btn-primary dropdown-toggle form-control" type="button" data-toggle="dropdown">Property Type
+<span class="caret"></span></button>
+<ul class="dropdown-menu">
+  <li><a href="#">HTML</a></li>
+  <li><a href="#">CSS</a></li>
+  <li><a href="#">JavaScript</a></li>
+        </ul>
         </div>
 
         <div class="form-group">
 
-          <label for="description">Description</label>
-          <textarea id="description" rows="10"  cols="30" name="description" class="form-control"></textarea>
-
-        </div>
-
-        <div class="form-group">
-
-          <label for="packages">Select Package</label>
-          <select name="packages_id" id="packages" class="form-control">
-              @foreach($packagies as $packages)
-              <option value="{{ $packages->id }}">{{$packages->name}}</option>
-              @endforeach
-          </select>
-        </div>
-        <div class="form-group">
-
-          <label for="city">City</label>
-          <input type="text" name="city" class="form-control">
-
-        </div>
-        <div class="form-group">
-
-          <label for="country">Country</label>
-          <input type="text" name="country" class="form-control">
-
-        </div>
-
-        <div class="form-group">
-                  {{ csrf_field() }}
-
-          <label for="duration">Duration</label>
-          <input type="text" name="duration" class="form-control">
-
-        </div>
-
-        <div class="form-group">
-
-          <label for="arrival">Arrival</label>
+          <label for="date">Date</label>
           <input type="date" name="arrival" class="form-control">
 
         </div>
 
         <div class="form-group">
+          <label for="clerk">Clerk</label>
+          <input type="text" name="clerk" class="form-control">
+          </div>
 
-          <label for="departure">Departure</label>
-          <input type="date" name="departure" class="form-control">
+          <div class="form-group">
+            <label for="agent">Agent</label>
+            <input type="text" name="agent" class="form-control">
+            </div>
 
-        </div>
+          <div class="form-group">
+            <label for="gas_meter">Gas Meter Reading & Location/Image</label>
+            <input type="text" name="gas_meter" class="form-control">
+            </div>
+
+          <div class="form-group">
+            <label for="gas_cert">Gas Meter Certiification</label>
+            <input type="text" name="gas_cert" class="form-control">
+            </div>
+
+          <div class="form-group">
+            <label for="elec_meter">Electric Meter Reading & Location/Image</label>
+            <input type="text" name="elec_meter" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="smoke_detect">Smoke Detectors</label>
+              <input type="text" name="smoke_detect" class="form-control">
+              </div>
+
+            <div class="form-group">
+              <label for="prop_clean">Properties Professionally Cleaned</label>
+              <input type="text" name="prop_clean" class="form-control">
+              </div>
+
+            <div class="form-group">
+              <label for="carpet_clean">Carpets Professionally Cleaned</label>
+              <input type="text" name="carpet_clean" class="form-control">
+              </div>
+
+            <div class="form-group">
+              <label for="keys">Keys</label>
+              <input type="text" name="keys" class="form-control">
+              </div>
 
         <div class="form-group">
 

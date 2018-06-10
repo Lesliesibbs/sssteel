@@ -8,27 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.png') }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/toastr.min.js') }}"></script>
-    <script>
-      @if(Session::has('success'))
-      toastr.success("{{ Session::get('success') }}");
-      @endif
-      @if(Session::has('info'))
-      toastr.success("{{ Session::get('success') }}");
-      @endif
-      if($request->session()->has('success'))
-{
-  toastr.success("{{ Session::get('success') }}")
-
-}
-    </script>
-
-
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -36,124 +19,360 @@
 
 
 
-      <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+      <!-- Styles
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
+
+    <link href="{{ asset('css/lib/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lib/calendar2/semantic.ui.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lib/calendar2/pignose.calendar.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lib/owl.carousel.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/lib/owl.theme.default.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/helper.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style2.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
+
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+<body class="fix-header">
+  <!-- Main wrapper  -->
+  <div id="main-wrapper">
+      <!-- header header  -->
+      <div class="header">
+          <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                        <!-- Logo -->
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="{{ url('/') }}">
+                                <!-- Logo icon -->
 
-                    </ul>
+                              <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('images/logo.png') }}" alt="homepage" class="dark-logo" /></a>
+                                <!--End Logo icon -->
+                                <!-- Logo text -->
+                              <span><img src="{{ asset('images/logo-icon.png') }}" alt="homepage" class="dark-logo" /></span>
+                            </a>
+                        </div>
+                        <!-- End Logo -->
+                        <div class="navbar-collapse">
+                            <!-- toggle and nav items -->
+                            <ul class="navbar-nav mr-auto mt-md-0">
+                                <!-- This is  -->
+                                <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="#"><i class="mdi mdi-menu"></i></a> </li>
+                                <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="#"><i class="ti-menu"></i></a> </li>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                            </ul>
+                            <!-- User profile and search -->
+                            <ul class="navbar-nav my-lg-0">
 
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                <!-- Search -->
+                                <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="#"><i class="ti-search"></i></a>
+                                    <form class="app-search">
+                                        <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                                </li>
+                                <!-- Comment -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
+        								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+        							</a>
+                                    <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
+                                        <ul>
+                                            <li>
+                                                <div class="drop-title">Notifications</div>
+                                            </li>
+                                            <li>
+                                                <div class="message-center">
+                                                    <!-- Message -->
+                                                    <a href="#">
+                                                        <div class="btn btn-danger btn-circle m-r-10"><i class="fa fa-link"></i></div>
+                                                        <div class="mail-contnet">
+                                                            <h5>This is title</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                                        </div>
+                                                    </a>
+                                                    <!-- Message -->
+                                                    <a href="#">
+                                                        <div class="btn btn-success btn-circle m-r-10"><i class="ti-calendar"></i></div>
+                                                        <div class="mail-contnet">
+                                                            <h5>This is another title</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span>
+                                                        </div>
+                                                    </a>
+                                                    <!-- Message -->
+                                                    <a href="#">
+                                                        <div class="btn btn-info btn-circle m-r-10"><i class="ti-settings"></i></div>
+                                                        <div class="mail-contnet">
+                                                            <h5>This is title</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span>
+                                                        </div>
+                                                    </a>
+                                                    <!-- Message -->
+                                                    <a href="#">
+                                                        <div class="btn btn-primary btn-circle m-r-10"><i class="ti-user"></i></div>
+                                                        <div class="mail-contnet">
+                                                            <h5>This is another title</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <!-- End Comment -->
+                                <!-- Messages -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-muted  " href="#" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope"></i>
+        								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+        							</a>
+                                    <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn" aria-labelledby="2">
+                                        <ul>
+                                            <li>
+                                                <div class="drop-title">You have 4 new messages</div>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i> </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <!-- End Messages -->
+                                <!-- Profile -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('images/users/5.jpg') }}" alt="user" class="profile-pic" /></a>
+                                    <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                                        <ul class="dropdown-user">
+                                          @guest
+                                              <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                                              <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                                          @else
+                                                  <li><a href="#"><i class="ti-user"></i> {{ Auth::user()->name }}</a></li>
+                                                      <li><a href="#"><i class="ti-user"></i> Profile</a></li>
+                                                      <li><a href="#"><i class="ti-wallet"></i> Balance</a></li>
+                                                      <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+                                                      <li><a href="#"><i class="ti-settings"></i> Setting</a></li>
+                                                      <a class="dropdown-item" href="{{ route('logout') }}"
+                                                         onclick="event.preventDefault();
+                                                                       document.getElementById('logout-form').submit();">
+                                                          {{ __('Logout') }}
+                                                      </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+                                                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                          @csrf
+                                                      </form>
+                                          @endguest
+
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
-            </div>
-        </nav>
+                <!-- End header header -->
+                <!-- Left Sidebar  -->
+                @if(Auth::check())
+                <div class="left-sidebar">
+                    <!-- Sidebar scroll-->
+                    <div class="scroll-sidebar">
+                        <!-- Sidebar navigation-->
+                        <nav class="sidebar-nav">
+                            <ul id="sidebarnav">
+                                <li class="nav-devider"></li>
+                                <li class="nav-label">Home</li>
+                                <li> <a  href="{{ route('home')}}" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard </span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="index.html">Ecommerce </a></li>
+                                        <li><a href="index1.html">Analytics </a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-label">Apps</li>
+                                <li> <a  href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Email</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="email-compose.html">Compose</a></li>
+                                        <li><a href="email-read.html">Read</a></li>
+                                        <li><a href="email-inbox.html">Inbox</a></li>
+                                    </ul>
+                                </li>
+                                <li> <a href="#" aria-expanded="false"><i class="fa fa-calendar"></i>
+                                  <span class="hide-menu">Calendar</span></a>
+                                </li>
+                                <li> <a  href="#" aria-expanded="false"><i class="fa fa-gbp"></i><span class="hide-menu">Payments</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="chart-flot.html">Flot</a></li>
+                                        <li><a href="chart-morris.html">Morris</a></li>
+                                        <li><a href="chart-chartjs.html">ChartJs</a></li>
+                                        <li><a href="chart-chartist.html">Chartist </a></li>
+                                        <li><a href="chart-amchart.html">AmChart</a></li>
+                                        <li><a href="chart-echart.html">EChart</a></li>
+                                        <li><a href="chart-sparkline.html">Sparkline</a></li>
+                                        <li><a href="chart-peity.html">Peity</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-label">Features</li>
+                                <li> <a  href="{{route('users')}}" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Users </span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="ui-alert.html">Alert</a></li>
+                                        <li><a href="ui-button.html">Button</a></li>
+                                        <li><a href="ui-dropdown.html">Dropdown</a></li>
+                                        <li><a href="ui-progressbar.html">Progressbar</a></li>
+                                        <li><a href="ui-tab.html">Tab</a></li>
+                                        <li><a href="ui-typography.html">Typography</a></li>
+                                    </ul>
+                                </li>
+                    <li> <a  href="{{route('holidays.trashed')}}" aria-expanded="false"><i class="fa fa-trash"></i><span class="hide-menu">Trash </span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="uc-calender.html">Calender</a></li>
+                                        <li><a href="uc-datamap.html">Datamap</a></li>
+                                        <li><a href="uc-nestedable.html">Nestedable</a></li>
+                                        <li><a href="uc-sweetalert.html">Sweetalert</a></li>
+                                        <li><a href="uc-toastr.html">Toastr</a></li>
+                                        <li><a href="uc-weather.html">Weather</a></li>
+                                    </ul>
+                                </li>
+                                <li> <a  href="{{route('forms')}}" aria-expanded="false"><i class="fa fa-file-pdf-o"></i><span class="hide-menu">Forms</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="form-basic.html">Basic Forms</a></li>
+                                        <li><a href="form-layout.html">Form Layout</a></li>
+                                        <li><a href="form-validation.html">Form Validation</a></li>
+                                        <li><a href="form-editor.html">Editor</a></li>
+                                        <li><a href="form-dropzone.html">Dropzone</a></li>
+                                    </ul>
+                                </li>
+                                <li> <a  href="#" aria-expanded="false"><i class="fa fa-cogs"></i><span class="hide-menu">Settings</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="table-bootstrap.html">Basic Tables</a></li>
+                                        <li><a href="table-datatable.html">Data Tables</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-label">Layout</li>
+                                <li> <a  href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Layout</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="layout-blank.html">Blank</a></li>
+                                        <li><a href="layout-boxed.html">Boxed</a></li>
+                                        <li><a href="layout-fix-header.html">Fix Header</a></li>
+                                        <li><a href="layout-fix-sidebar.html">Fix Sidebar</a></li>
+                                    </ul>
+                                </li>
 
-        <!--<main class="py-4">
-            @yield('content')
-        </main>-->
-        <div class="container">
-          <main class="py-4">
-          <div class="row">
+                            </ul>
+                        </nav>
+                        <!-- End Sidebar navigation -->
+                    </div>
+                    <!-- End Sidebar scroll-->
+                </div>
 
-            @if(Auth::check())
+                <!-- End Left Sidebar  -->
+                <!-- Left Sidebar  -->
+                <div class="left-sidebar">
+                    <!-- Sidebar scroll-->
+                    <div class="scroll-sidebar">
+                        <!-- Sidebar navigation-->
+                        <nav class="sidebar-nav">
+                            <ul id="sidebarnav">
+                                <li class="nav-devider"></li>
+                                <li class="nav-label">Home</li>
+                                <li> <a  href="{{ route('home')}}" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard </span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="index.html">Ecommerce </a></li>
+                                        <li><a href="index1.html">Analytics </a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-label">Apps</li>
+                                <li> <a  href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Email</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="email-compose.html">Compose</a></li>
+                                        <li><a href="email-read.html">Read</a></li>
+                                        <li><a href="email-inbox.html">Inbox</a></li>
+                                    </ul>
+                                </li>
+                                <li> <a href="#" aria-expanded="false"><i class="fa fa-calendar"></i>
+                                  <span class="hide-menu">Calendar</span></a>
 
+                                </li>
+                                <li> <a  href="#" aria-expanded="false"><i class="fa fa-gbp"></i><span class="hide-menu">Payment</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="chart-flot.html">Flot</a></li>
+                                        <li><a href="chart-morris.html">Morris</a></li>
+                                        <li><a href="chart-chartjs.html">ChartJs</a></li>
+                                        <li><a href="chart-chartist.html">Chartist </a></li>
+                                        <li><a href="chart-amchart.html">AmChart</a></li>
+                                        <li><a href="chart-echart.html">EChart</a></li>
+                                        <li><a href="chart-sparkline.html">Sparkline</a></li>
+                                        <li><a href="chart-peity.html">Peity</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-label">Features</li>
+                                <li> <a  href="{{route('forms')}}" aria-expanded="false"><i class="fa fa-wpforms"></i><span class="hide-menu">Forms</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="form-basic.html">Basic Forms</a></li>
+                                        <li><a href="form-layout.html">Form Layout</a></li>
+                                        <li><a href="form-validation.html">Form Validation</a></li>
+                                        <li><a href="form-editor.html">Editor</a></li>
+                                        <li><a href="form-dropzone.html">Dropzone</a></li>
+                                    </ul>
+                                </li>
+                                <li> <a  href="{{route('holidays')}}" aria-expanded="false"><i class="fa fa-file-pdf-o"></i><span class="hide-menu">Reports</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="form-basic.html">Basic Forms</a></li>
+                                        <li><a href="form-layout.html">Form Layout</a></li>
+                                        <li><a href="form-validation.html">Form Validation</a></li>
+                                        <li><a href="form-editor.html">Editor</a></li>
+                                        <li><a href="form-dropzone.html">Dropzone</a></li>
+                                    </ul>
+                                </li>
+                                <li> <a  href="{{route('users')}}" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Users </span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="ui-alert.html">Alert</a></li>
+                                        <li><a href="ui-button.html">Button</a></li>
+                                        <li><a href="ui-dropdown.html">Dropdown</a></li>
+                                        <li><a href="ui-progressbar.html">Progressbar</a></li>
+                                        <li><a href="ui-tab.html">Tab</a></li>
+                                        <li><a href="ui-typography.html">Typography</a></li>
+                                    </ul>
+                                </li>
+                    <li> <a  href="{{route('holidays.trashed')}}" aria-expanded="false"><i class="fa fa-trash"></i><span class="hide-menu">Trash</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="uc-calender.html">Calender</a></li>
+                                        <li><a href="uc-datamap.html">Datamap</a></li>
+                                        <li><a href="uc-nestedable.html">Nestedable</a></li>
+                                        <li><a href="uc-sweetalert.html">Sweetalert</a></li>
+                                        <li><a href="uc-toastr.html">Toastr</a></li>
+                                        <li><a href="uc-weather.html">Weather</a></li>
+                                    </ul>
+                                </li>
 
-            <div class="col-lg-4">
-              <ul class="list-group">
-                <li class="list-group-item">
-                  <a href="{{ route('home')}}">Home</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="{{route('packages')}}">Property</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="{{route('forms')}}">Forms</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="{{route('holidays')}}">All Forms</a>
-                </li>
+                                <li> <a  href="#" aria-expanded="false"><i class="fa fa-cogs"></i><span class="hide-menu">Settings</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="table-bootstrap.html">Basic Tables</a></li>
+                                        <li><a href="table-datatable.html">Data Tables</a></li>
+                                    </ul>
+                                </li>
 
-                @if(Auth::user()->admin)
+                            </ul>
+                        </nav>
+                        <!-- End Sidebar navigation -->
+                    </div>
+                    <!-- End Sidebar scroll-->
+                </div>
+                <!-- End Left Sidebar  -->
+                <div class="page-wrapper" style="height:1200px;">
+                    <!-- Bread crumb -->
+                    <div class="row page-titles">
+                        <div class="col-md-5 align-self-center">
+                            <h3 class="text-primary">Dashboard</h3> </div>
+                        <div class="col-md-7 align-self-center">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- End Bread crumb -->
+                @endif
 
-
-
-                <li class="list-group-item">
-                  <a href="{{route('holidays')}}">Reports</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="{{route('holidays')}}">Email</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KKKP7LSVY6ZSW">Payments</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="{{route('events')}}">Calender</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="{{route('users')}}">Users</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="{{route('holidays.trashed')}}">Trash</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="{{route('holidays')}}">Settings</a>
-                </li>
-              </ul>
-            </div>
-
-            @endif
-
-              @endif
-
-              <div class="col-lg-8">
-                @yield('content')
-              </div>
-
-          </div>
-</main>
-        </div>
+          @yield('content')
 
     </div>
 
+      <script src="{{ asset('js/scripts.js') }}"></script>
 
+      @include ('layout.scripts')
 </body>
 </html>

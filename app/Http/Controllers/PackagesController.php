@@ -39,19 +39,40 @@ class PackagesController extends Controller
     public function store(Request $request)
     {
           $this->validate($request, [
-
-            'name' => 'required'
+            'property_type' => 'required|max:255',
+            'house_name' => 'required|max:255',
+            'address_1' => 'required|max:255',
+            'address_2' => 'required|max:255',
+            'address_3' => 'required|max:255',
+            'city' => 'required|max:255',
+            'county' => 'required|max:255',
+            'country' => 'required|max:255',
+            'postcode' => 'required|max:255',
+            'tenancy_type' => 'required|max:255'
 
           ]);
 
           $packages = new Packages;
 
-          $packages->name = $request->name;
-          $packages->save();
+            $packages->property_type = $request->property_type;
+            $packages->house_name = $request->house_name;
+            $packages->address_1 = $request->address_1;
+            $packages->address_2 = $request->address_2;
+            $packages->address_3 = $request->address_3;
+            $packages->city = $request->city;
+            $packages->county = $request->county;
+            $packages->country = $request->country;
+            $packages->postcode = $request->postcode;
+            $packages->tenancy_type = $request->tenancy_type;
 
-          Session::flash('success', 'Packages created');
+            $packages->save();
 
-          return redirect()->route('packages');
+        /** $packages->name = $request->name;
+        *  $packages->save();
+        */
+            Session::flash('success', 'Packages created');
+
+            return redirect()->route('packages');
     }
 
     /**
@@ -89,7 +110,16 @@ class PackagesController extends Controller
     {
       $packages = Packages::find($id);
 
-      $packages->name = $request->name;
+      $packages->property_type = $request->property_type;
+      $packages->house_name = $request->house_name;
+      $packages->address_1 = $request->address_1;
+      $packages->address_2 = $request->address_2;
+      $packages->address_3 = $request->address_3;
+      $packages->city = $request->city;
+      $packages->county = $request->county;
+      $packages->postcode = $request->postcode;
+      $packages->country = $request->country;
+      $packages->tenancy_type = $request->tenancy_type;
 
       $packages->save();
 
