@@ -21,6 +21,12 @@
 
       <!-- Styles
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
+    <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.css">
+    <link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/tui-calendar.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/default.css') }}"></link>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/icons.css') }}"></link>
 
     <link href="{{ asset('css/lib/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/lib/calendar2/semantic.ui.min.css') }}" rel="stylesheet">
@@ -46,18 +52,12 @@
 
                               <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('images/logo.png') }}" alt="homepage" class="dark-logo" /></a>
                                 <!--End Logo icon -->
-                                <!-- Logo text -->
-                              <span><img src="{{ asset('images/logo-icon.png') }}" alt="homepage" class="dark-logo" /></span>
-                            </a>
+                                </a>
                         </div>
                         <!-- End Logo -->
                         <div class="navbar-collapse">
                             <!-- toggle and nav items -->
                             <ul class="navbar-nav mr-auto mt-md-0">
-                                <!-- This is  -->
-                                <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="#"><i class="mdi mdi-menu"></i></a> </li>
-                                <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="#"><i class="ti-menu"></i></a> </li>
-
                             </ul>
                             <!-- User profile and search -->
                             <ul class="navbar-nav my-lg-0">
@@ -183,14 +183,14 @@
                                     </ul>
                                 </li>
                                 <li class="nav-label">Apps</li>
-                                <li> <a  href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Email</span></a>
+                                <li> <a  href="{{route('email')}}" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Email</span></a>
                                     <ul aria-expanded="false" class="collapse">
                                         <li><a href="email-compose.html">Compose</a></li>
                                         <li><a href="email-read.html">Read</a></li>
                                         <li><a href="email-inbox.html">Inbox</a></li>
                                     </ul>
                                 </li>
-                                <li> <a href="#" aria-expanded="false"><i class="fa fa-calendar"></i>
+                                <li> <a href="{{route('calendar')}}" aria-expanded="false"><i class="fa fa-calendar"></i>
                                   <span class="hide-menu">Calendar</span></a>
                                 </li>
                                 <li> <a  href="#" aria-expanded="false"><i class="fa fa-gbp"></i><span class="hide-menu">Payments</span></a>
@@ -224,6 +224,15 @@
                                         <li><a href="uc-sweetalert.html">Sweetalert</a></li>
                                         <li><a href="uc-toastr.html">Toastr</a></li>
                                         <li><a href="uc-weather.html">Weather</a></li>
+                                    </ul>
+                                </li>
+                                <li> <a  href="{{route('forms')}}" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Properties</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="form-basic.html">Basic Forms</a></li>
+                                        <li><a href="form-layout.html">Form Layout</a></li>
+                                        <li><a href="form-validation.html">Form Validation</a></li>
+                                        <li><a href="form-editor.html">Editor</a></li>
+                                        <li><a href="form-dropzone.html">Dropzone</a></li>
                                     </ul>
                                 </li>
                                 <li> <a  href="{{route('forms')}}" aria-expanded="false"><i class="fa fa-file-pdf-o"></i><span class="hide-menu">Forms</span></a>
@@ -275,14 +284,14 @@
                                     </ul>
                                 </li>
                                 <li class="nav-label">Apps</li>
-                                <li> <a  href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Email</span></a>
+                                <li> <a  href="{{route('email')}}" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Email</span></a>
                                     <ul aria-expanded="false" class="collapse">
                                         <li><a href="email-compose.html">Compose</a></li>
                                         <li><a href="email-read.html">Read</a></li>
                                         <li><a href="email-inbox.html">Inbox</a></li>
                                     </ul>
                                 </li>
-                                <li> <a href="#" aria-expanded="false"><i class="fa fa-calendar"></i>
+                                <li> <a href="{{route('calendar')}}" aria-expanded="false"><i class="fa fa-calendar"></i>
                                   <span class="hide-menu">Calendar</span></a>
 
                                 </li>
@@ -299,6 +308,15 @@
                                     </ul>
                                 </li>
                                 <li class="nav-label">Features</li>
+                                <li> <a  href="{{route('forms')}}" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Properties</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="form-basic.html">Basic Forms</a></li>
+                                        <li><a href="form-layout.html">Form Layout</a></li>
+                                        <li><a href="form-validation.html">Form Validation</a></li>
+                                        <li><a href="form-editor.html">Editor</a></li>
+                                        <li><a href="form-dropzone.html">Dropzone</a></li>
+                                    </ul>
+                                </li>
                                 <li> <a  href="{{route('forms')}}" aria-expanded="false"><i class="fa fa-wpforms"></i><span class="hide-menu">Forms</span></a>
                                     <ul aria-expanded="false" class="collapse">
                                         <li><a href="form-basic.html">Basic Forms</a></li>
@@ -366,13 +384,17 @@
                     </div>
                     <!-- End Bread crumb -->
                 @endif
+                <div class="container-fluid">
 
           @yield('content')
-
+        </div>
+            </div>
     </div>
 
       <script src="{{ asset('js/scripts.js') }}"></script>
 
       @include ('layout.scripts')
+      @yield('script')
+
 </body>
 </html>

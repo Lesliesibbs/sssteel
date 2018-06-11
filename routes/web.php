@@ -285,6 +285,15 @@ Route::get('/term/create', [
     'as' => 'term.update'
   ]);
 
+Route::get('/email',[
+  'uses' => 'EmailController@index',
+  'as' => 'email'
+]);
+
+Route::get('/calendar',[
+  'uses' => 'CalenderController@index',
+  'as' => 'calendar'
+]);
 
   Route::get('pdfview',array('as'=>'pdfview','uses'=>'HolidaysController@pdfview'));
 });

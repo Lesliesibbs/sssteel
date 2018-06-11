@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row" style="padding:20px">
 
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
 <h3>Forms</h3>
@@ -55,5 +56,5 @@
     </div>
   </div>
 </div>
-
+</div>
 @endsection
